@@ -1,0 +1,88 @@
+@keyframes reveal {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes hide {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes gradient-slide {
+	0% {
+		background-position-x: 0%;
+	}
+	50% {
+		background-position-x: 100%;
+	}
+	100% {
+		background-position-x: 0%;
+	}
+}
+
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.success {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	top: 0px;
+	left: 0px;
+	backdrop-filter: blur(10px);
+	background: linear-gradient(to bottom, deeppink, purple);
+	pointer-events: none;
+}
+
+.success h1 {
+	color: white;
+	font: 72px "Segoe UI";
+}
+
+.restart {
+	color: rgba(0, 0, 0, 0.8);
+	text-transform: uppercase;
+	pointer-events: all;
+	border-radius: 7px;
+	font: 28px "Comic Sans MS";
+	font-weight: 100;
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	border: none;
+	width: 160px;
+	height: 70px;
+	background: radial-gradient(
+		#414602,
+		#073f94,
+		#045c08,
+		#880799,
+		#7c1705,
+		#414602,
+		#073f94,
+		#045c08,
+		#880799,
+		#7c1705
+	);
+	background-size: 300vw 300vw;
+	background-position: 50% 70%;
+	text-shadow: 0px 2px 4px #00ff00a1, 0px -2px 4px #00ff00a1;
+	animation: gradient-slide 20s ease-in-out 0s infinite forwards;
+}
