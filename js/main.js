@@ -2,17 +2,26 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 const difficulty = [
 	[3, 3],
 	[3, 5],
+	[4, 6],
 	[5, 8],
+	[6, 8],
+	[8, 9],
+	[8, 11],
 ];
 // const difficulty_level = Number(document.URL.split("?")[1].split("level=")[1]);
 let level;
 if (Number(localStorage.getItem("level"))) {
 	level = Number(localStorage.getItem("level"));
+	if (level >= difficulty.length) {
+		const complete_overlay = document.querySelector(".all-complete");
+		complete_overlay.classList.remove("hidden");
+		complete_overlay.style.animation = "";
+		complete_overlay.style.animation = "reveal 2s ease-in-out 0s 1 forwards";
+	}
 } else {
 	level = 0;
 }
 const difficulty_level = level;
-console.log(difficulty_level);
 const config = {
 	width: window.innerWidth,
 	height: window.innerHeight,
@@ -245,13 +254,15 @@ document.addEventListener("keydown", (event) => {
 			Body.setVelocity(ball, { x: x + 5, y });
 			break;
 	}
-	if (ball.velocity.x > 6) Body.setVelocity(ball, { x: 6, y: ball.velocity.y });
-	if (ball.velocity.x < -6) Body.setVelocity(ball, { x: -6, y: ball.velocity.y });
-	if (ball.velocity.y > 6) Body.setVelocity(ball, { x: ball.velocity.x, y: 6 });
-	if (ball.velocity.y < -6) Body.setVelocity(ball, { x: ball.velocity.x, y: -6 });
+	if (ball.velocity.x > 7) Body.setVelocity(ball, { x: 7, y: ball.velocity.y });
+	if (ball.velocity.x < -7) Body.setVelocity(ball, { x: -7, y: ball.velocity.y });
+	if (ball.velocity.y > 7) Body.setVelocity(ball, { x: ball.velocity.x, y: 7 });
+	if (ball.velocity.y < -7) Body.setVelocity(ball, { x: ball.velocity.x, y: -7 });
 });
 
 // Win Condition
 Events.on(engine, "collisionStart", check_win);
+
+document.querySelector("#level").textContent = difficulty_level;
 
 console.log(document.URL);

@@ -9,10 +9,15 @@
 		<title>Maze</title>
 	</head>
 	<body>
-		<div class="success hidden">
+		<div class="overlay success hidden">
 			<h1>You win!</h1>
-			<button class="restart" onclick="reload()">Restart</button>
+			<button class="overlay-btn" onclick="reload()">Next level</button>
 		</div>
+		<div class="overlay all-complete hidden">
+			<h1>You have completed all the levels!</h1>
+			<button class="overlay-btn" onclick="reload(true)">Restart</button>
+		</div>
+		<span class="lvl-display">Level <span id="level"></span></span>
 		<script src="./js/utils.js"></script>
 		<script src="./js/main.js"></script>
 	</body>

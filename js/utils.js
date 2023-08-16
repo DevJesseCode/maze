@@ -19,9 +19,10 @@ const average = (...arguments) => {
 	return sum / arguments.length;
 };
 
-const reload = () => {
+const reload = (clearStorage) => {
+	if (clearStorage) localStorage.clear();
 	const meta = document.createElement("meta");
 	meta.setAttribute("http-equiv", "refresh");
-	meta.setAttribute("content", "2");
+	meta.setAttribute("content", "0.5");
 	document.head.appendChild(meta);
 };

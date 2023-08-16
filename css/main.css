@@ -33,11 +33,7 @@ body {
 	overflow: hidden;
 }
 
-.hidden {
-	display: none !important;
-}
-
-.success {
+.overlay {
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -51,13 +47,18 @@ body {
 	pointer-events: none;
 }
 
-.success h1 {
-	color: white;
-	font: 72px "Segoe UI";
+.hidden {
+	display: none !important;
 }
 
-.restart {
-	color: rgba(0, 0, 0, 0.8);
+.overlay h1 {
+	color: white;
+	font: 76px "Segoe UI";
+	text-shadow: 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-btn {
+	color: white;
 	text-transform: uppercase;
 	pointer-events: all;
 	border-radius: 7px;
@@ -67,7 +68,7 @@ body {
 	top: 7px;
 	left: 7px;
 	border: none;
-	width: 160px;
+	width: 180px;
 	height: 70px;
 	background: radial-gradient(
 		#414602,
@@ -85,4 +86,23 @@ body {
 	background-position: 50% 70%;
 	text-shadow: 0px 2px 4px #00ff00a1, 0px -2px 4px #00ff00a1;
 	animation: gradient-slide 20s ease-in-out 0s infinite forwards;
+	transition-duration: 0.4s;
+}
+
+.overlay-btn:hover {
+	box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.7);
+	transition-duration: 0.28s;
+}
+
+.lvl-display {
+	position: absolute;
+	bottom: 4px;
+	left: 4px;
+	border-top-right-radius: 25px;
+	font: 24px "Comic Sans MS";
+	line-height: 24px;
+	background: linear-gradient(to bottom, deeppink, purple);
+	color: white;
+	padding: 10px;
+	width: 120px;
 }
