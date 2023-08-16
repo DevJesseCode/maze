@@ -1,21 +1,19 @@
 const shuffle = (iterable) => {
 	let counter = iterable.length;
 	const string = typeof iterable === "string" ? true : false;
-	iterable = new Array(...iterable);
+	const iterableArray = new Array(...iterable);
 	while (counter > 0) {
 		const index = Math.floor(Math.random() * counter);
 		counter--;
-		const temp = iterable[counter];
-		iterable[counter] = iterable[index];
-		iterable[index] = temp;
+		const temp = iterableArray[counter];
+		iterableArray[counter] = iterableArray[index];
+		iterableArray[index] = temp;
 	}
-	return string ? iterable.join("") : iterable;
+	return string ? iterableArray.join("") : iterableArray;
 };
 
 const average = (...arguments) => {
-	const sum = arguments.reduce((prev, current) => {
-		return Number(current) + prev;
-	}, 0);
+	const sum = arguments.reduce((total, current) => Number(current) + total, 0);
 	return sum / arguments.length;
 };
 

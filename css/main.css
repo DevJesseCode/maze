@@ -101,7 +101,7 @@ body {
 	border-top-right-radius: 25px;
 	font: 24px "Comic Sans MS";
 	line-height: 24px;
-	background: linear-gradient(to bottom, deeppink, purple);
+	background: linear-gradient(to bottom right, cyan, #08f, blue);
 	color: white;
 	padding: 10px;
 	width: 120px;
